@@ -1,0 +1,33 @@
+{
+	module Teste {
+	
+		int constanteTeste = 2000000;
+		
+		proc printFromModule(int i){
+			write(i)
+		}
+	} ,
+	
+	classe Contador  {
+		extends Teste;
+
+		int constanteTeste = 1,
+		int valor = 0;
+ 
+		Contador(int i){
+			this.valor := i
+		},
+ 
+		proc print() {
+			write(this.valor)
+		}
+ 
+	};
+ 	
+	{
+		Contador cont := new Contador(1);
+		cont.constanteTeste := 7;
+		write(cont.constanteTeste);
+		write(Contador.constanteTeste)
+	}
+}
